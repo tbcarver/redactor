@@ -16,6 +16,8 @@ function postHome(req, res, next) {
 
 	var model = { title: "Redactor" };
 
+	model.redactedText = req.body.document;
+
 	res.render("home.template.hbs", model);
 }
 

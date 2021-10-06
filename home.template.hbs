@@ -26,31 +26,34 @@
 			<div class="row">
 				<div class="col">
 
-					<div class="card-group">
-						<div class="card">
-							<h5 class="card-title bg-secondary p-3">Key Words and Phases</h5>
-							<div class="card-body">
-								<p class="card-text">Separate by spaces or commas.<br>Use single or double quotes for
-									phrases.</p>
+					<form method="post">
+						<div class="card-group">
+							<div class="card">
+								<h5 class="card-title bg-secondary p-3">Key Words and Phases</h5>
+								<div class="card-body">
+									<p class="card-text">Separate by spaces or commas.<br>Use single or double quotes
+										for
+										phrases.</p>
+								</div>
+								<p class="m-2"><textarea name="keywords" class="w-100" style="min-height: 200px;"></textarea></p>
 							</div>
-								<p class="m-2"><textarea class="w-100" style="min-height: 200px;"></textarea></p>
-						</div>
-						<div class="card">
-							<h5 class="card-title bg-primary p-3">Document Text</h5>
-							<div class="card-body">
-								<p class="card-text">Document text to be redacted.</p>
+							<div class="card">
+								<h5 class="card-title bg-primary p-3">Document Text</h5>
+								<div class="card-body">
+									<p class="card-text">Document text to be redacted.</p>
+								</div>
+								<p class="m-2"><textarea name="document" class="w-100" style="min-height: 200px;"></textarea></p>
 							</div>
-								<p class="m-2"><textarea class="w-100" style="min-height: 200px;"></textarea></p>
-						</div>
-						<div class="card">
-							<h5 class="card-title bg-success p-3">Results</h5>
-							<div class="card-body">
-								<p class="card-text"></p>
+							<div class="card">
+								<h5 class="card-title bg-success p-3">Results</h5>
+								<div class="card-body">
+									<p class="card-text">{{redactedText}}</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<button class="btn btn-primary mt-3" style="width: 200px;">Redact</button>
+						<button class="btn btn-primary mt-3" style="width: 200px;">Redact</button>
+					</form>
 				</div>
 			</div>
 		</div>
