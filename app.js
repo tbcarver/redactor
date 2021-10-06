@@ -17,6 +17,7 @@ app.engine("hbs", handlebars.engine);
 app.set("view engine", "hbs");
 app.set("views", "./");
 
+app.use("/vendor", express.static("node_modules"));
 controller.initialize(app);
 
 app.listen(port, function() {
