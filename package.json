@@ -1,0 +1,19 @@
+{
+  "name": "redactor",
+  "version": "1.0.0",
+  "description": "Web application for processing classified documents.",
+  "main": "app.js",
+  "repository": "https://github.com/tbcarver/redactor.git",
+  "author": "Tyler Carver <tbcarver2@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --watch lib --watch server",
+    "start": "cross-env NODE_ENV=production node ."
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "nodemon": "^2.0.13"
+  }
+}
