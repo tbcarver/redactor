@@ -1,4 +1,6 @@
 
+const redactor = require("./redactor");
+
 function initialize(app) {
 
 	app.get("/", getHome);
@@ -16,7 +18,7 @@ function postHome(req, res, next) {
 
 	var model = { title: "Redactor" };
 
-	model.redactedText = req.body.document;
+	model.redactedText = redactor.redact(req.body.keywords, req.body.document);
 
 	res.render("home.template.hbs", model);
 }
