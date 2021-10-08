@@ -1,7 +1,33 @@
 
-function redact(keywords, document) {
+const coreString = require("./lib/coreString");
 
-	return keywords + document;
+function redact(keywordsPharases, document) {
+
+	const replacement = "XXXX";
+	const { keywords, phrases } = parseKeywordsPharases(keywordsPharases);
+
+	document = coreString.replaceAll(document, phrases, replacement);
+	document = coreString.replaceAll(document, keywords, replacement);
+
+	return document;
 }
 
-module.exports.redact = redact;
+function parseKeywordsPharases(keywordsPharases) {
+
+	var phrases = [];
+	var keywords = keywordsPharases.replace(/["|']([^"|']+)["|']/gm, function(match, group) {
+		phrases.push(group);
+		return "";
+	});
+
+	keywords = keywords.match(/[^\s|,]+/gm);
+
+	return {
+		keywords,
+		phrases
+	}
+}
+
+if (typeof module !== "undefined" && module.exports) {
+	module.exports.redact = redact;
+}
